@@ -10,5 +10,6 @@ import Foundation
 
 public struct News {
     private(set) var title: String
+    private(set) var description: String
     private(set) var thumbnail: String
 }
