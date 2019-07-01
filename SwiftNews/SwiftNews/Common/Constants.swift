@@ -9,6 +9,9 @@
 import Foundation
 
 public class Constants {
+    // MARK: URL
+    internal static let kURL_JSON: String = "https://www.reddit.com/r/swift/.json"
+    
     // MARK: NEWS
     internal static let kSWIFT_NEWS_TITLE: String = "Swift News"
 }
