@@ -23,6 +23,7 @@ class MainViewController: UIViewController {
         }
     }
     
+    private var articleSelected: News?
     
     override func viewDidLoad() {
         super.viewDidLoad()
