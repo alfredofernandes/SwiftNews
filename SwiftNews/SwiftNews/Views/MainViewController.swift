@@ -52,9 +52,14 @@ class MainViewController: UIViewController {
     }
     
     fileprivate func loadNews() {
-        // TODO: remove test data
-        self.news = [News(title: "Test 1", description: "test 1....", thumbnail: "image1"),
-                     News(title: "Test 2", description: "test 2....", thumbnail: "image2")]
+        CoreFacade.shared.fetchNews { (result) in
+            switch result {
+            case .success(let newsData):
+                self.news = newsData.data.children
+            case .failure(let error):
+                print("Error fetching news data. More info: \(error.prettyDescription)")
+            }
+        }
     }
 }
 
