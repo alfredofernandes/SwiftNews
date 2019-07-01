@@ -49,9 +49,36 @@
                     <view key="view" contentMode="scaleToFill" id="XUh-ei-prj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YR2-S2-8Rh">
+                                <rect key="frame" x="16" y="80" width="382" height="640"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QPN-KV-ZMl">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="257.33333333333331"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nB5-SM-xy0">
+                                        <rect key="frame" x="0.0" y="273.33333333333326" width="382" height="366.66666666666674"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YR2-S2-8Rh" firstAttribute="top" secondItem="gWw-6t-6G0" secondAttribute="top" constant="16" id="Oid-ke-wJC"/>
+                            <constraint firstItem="gWw-6t-6G0" firstAttribute="trailing" secondItem="YR2-S2-8Rh" secondAttribute="trailing" constant="16" id="So5-hz-j5m"/>
+                            <constraint firstItem="gWw-6t-6G0" firstAttribute="bottom" secondItem="YR2-S2-8Rh" secondAttribute="bottom" constant="16" id="qdW-yt-hvu"/>
+                            <constraint firstItem="YR2-S2-8Rh" firstAttribute="leading" secondItem="gWw-6t-6G0" secondAttribute="leading" constant="16" id="vEo-ad-Toa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gWw-6t-6G0"/>
                     </view>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="nB5-SM-xy0" id="6og-TR-gRH"/>
+                        <outlet property="topImage" destination="QPN-KV-ZMl" id="5Yr-5u-BBn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4G0-LN-81u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
