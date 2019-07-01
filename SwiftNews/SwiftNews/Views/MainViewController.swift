@@ -13,6 +13,15 @@ class MainViewController: UIViewController {
     
     private let cellNameAndId: String = String(describing: ArticleCell.self)
     
+    private var news = [News]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
