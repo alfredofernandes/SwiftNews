@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = Constants.kSWIFT_NEWS_TITLE
     }
 }
-
