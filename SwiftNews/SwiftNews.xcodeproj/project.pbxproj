@@ -18,6 +18,7 @@
 		45801D2622CA98D30037D0B7 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D2522CA98D30037D0B7 /* News.swift */; };
 		45801D2B22CA9B680037D0B7 /* ArticleDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D2A22CA9B680037D0B7 /* ArticleDetailVC.swift */; };
 		45801D2E22CAA04D0037D0B7 /* FetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D2D22CAA04D0037D0B7 /* FetchController.swift */; };
+		45801D3022CAA99D0037D0B7 /* CoreFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D2F22CAA99D0037D0B7 /* CoreFacade.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		45801D2522CA98D30037D0B7 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		45801D2A22CA9B680037D0B7 /* ArticleDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailVC.swift; sourceTree = "<group>"; };
 		45801D2D22CAA04D0037D0B7 /* FetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchController.swift; sourceTree = "<group>"; };
+		45801D2F22CAA99D0037D0B7 /* CoreFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreFacade.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		45801D1C22CA92CC0037D0B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				45801D2F22CAA99D0037D0B7 /* CoreFacade.swift */,
 				45801D0722CA909B0037D0B7 /* MainViewController.swift */,
 				45801D2022CA94850037D0B7 /* Cell */,
 				45801D2922CA9B470037D0B7 /* ArticleDetail */,
@@ -202,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45801D3022CAA99D0037D0B7 /* CoreFacade.swift in Sources */,
 				45801D2B22CA9B680037D0B7 /* ArticleDetailVC.swift in Sources */,
 				45801D2322CA94A80037D0B7 /* ArticleCell.swift in Sources */,
 				45801D2E22CAA04D0037D0B7 /* FetchController.swift in Sources */,
