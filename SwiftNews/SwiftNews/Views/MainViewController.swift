@@ -37,8 +37,8 @@ class MainViewController: UIViewController {
     
     fileprivate func loadNews() {
         // TODO: remove test data
-        self.news = [News(title: "Test 1", thumbnail: "image1"),
-                     News(title: "Test 2", thumbnail: "image2")]
+        self.news = [News(title: "Test 1", description: "test....", thumbnail: "image1"),
+                     News(title: "Test 2", description: "test....", thumbnail: "image2")]
     }
 }
 
