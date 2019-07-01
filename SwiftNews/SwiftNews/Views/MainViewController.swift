@@ -31,6 +31,7 @@ class MainViewController: UIViewController {
         self.title = Constants.kSWIFT_NEWS_TITLE
         
         // MARK: Setup the tableView
+        self.tableView.delegate = self
         self.tableView.dataSource = self
         
         self.tableView.register(UINib(nibName: self.cellNameAndId, bundle: nil), forCellReuseIdentifier: self.cellNameAndId)
@@ -54,6 +55,18 @@ class MainViewController: UIViewController {
         // TODO: remove test data
         self.news = [News(title: "Test 1", description: "test....", thumbnail: "image1"),
                      News(title: "Test 2", description: "test....", thumbnail: "image2")]
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.articleSelected = self.news[indexPath.row]
+        
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        self.performSegue(withIdentifier: self.segueIdNewsDetail, sender: self)
     }
 }
 
