@@ -13,6 +13,8 @@ class MainViewController: UIViewController {
     
     private let cellNameAndId: String = String(describing: ArticleCell.self)
     
+    private let segueIdNewsDetail: String = "showArticleDetail"
+    
     private var news = [News]() {
         didSet {
             DispatchQueue.main.async {
