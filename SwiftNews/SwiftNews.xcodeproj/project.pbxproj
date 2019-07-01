@@ -19,6 +19,7 @@
 		45801D2B22CA9B680037D0B7 /* ArticleDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D2A22CA9B680037D0B7 /* ArticleDetailVC.swift */; };
 		45801D2E22CAA04D0037D0B7 /* FetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D2D22CAA04D0037D0B7 /* FetchController.swift */; };
 		45801D3022CAA99D0037D0B7 /* CoreFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D2F22CAA99D0037D0B7 /* CoreFacade.swift */; };
+		45801D3222CAB1F20037D0B7 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D3122CAB1F20037D0B7 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		45801D2A22CA9B680037D0B7 /* ArticleDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailVC.swift; sourceTree = "<group>"; };
 		45801D2D22CAA04D0037D0B7 /* FetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchController.swift; sourceTree = "<group>"; };
 		45801D2F22CAA99D0037D0B7 /* CoreFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreFacade.swift; sourceTree = "<group>"; };
+		45801D3122CAB1F20037D0B7 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				45801D1822CA92010037D0B7 /* Constants.swift */,
+				45801D3122CAB1F20037D0B7 /* Utilities.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				45801D2E22CAA04D0037D0B7 /* FetchController.swift in Sources */,
 				45801D0822CA909B0037D0B7 /* MainViewController.swift in Sources */,
 				45801D0622CA909B0037D0B7 /* AppDelegate.swift in Sources */,
+				45801D3222CAB1F20037D0B7 /* Utilities.swift in Sources */,
 				45801D2622CA98D30037D0B7 /* News.swift in Sources */,
 				45801D1922CA92010037D0B7 /* Constants.swift in Sources */,
 			);
