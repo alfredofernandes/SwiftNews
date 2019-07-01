@@ -15,4 +15,8 @@ class ArticleCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    public func fillCell(article: News) {
+        self.titleLabel.text = article.title
+    }
 }
