@@ -34,6 +34,8 @@ class MainViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        self.tableView.rowHeight = UITableView.automaticDimension
+        
         self.tableView.register(UINib(nibName: self.cellNameAndId, bundle: nil), forCellReuseIdentifier: self.cellNameAndId)
         
         self.loadNews()
