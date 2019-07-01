@@ -18,5 +18,16 @@ class ArticleCell: UITableViewCell {
     
     public func fillCell(article: Article) {
         self.titleLabel.text = article.title
+        
+        guard let imageURL = URL(string: article.thumbnail) else {
+            return
+        }
+        
+        if let image = Utilities.getImage(fromURL: imageURL) {
+            self.thumbnailImage.image = image
+            self.thumbnailImage.isHidden = false
+        } else {
+            self.thumbnailImage.isHidden = true
+        }
     }
 }
