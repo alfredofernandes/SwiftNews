@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -45,42 +46,48 @@
         <!--Article DetailVC-->
         <scene sceneID="p9n-6d-AO1">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4G0-LN-81u" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="al6-Uh-w4M" customClass="ArticleDetailVC" customModule="SwiftNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XUh-ei-prj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YR2-S2-8Rh">
-                                <rect key="frame" x="16" y="80" width="382" height="640"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="SpS-Jr-IWc">
+                                <rect key="frame" x="16" y="64" width="382" height="656"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QPN-KV-ZMl">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="257.33333333333331"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ECI-nt-OU0">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="382"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ECI-nt-OU0" secondAttribute="height" multiplier="1:1" id="bOt-We-ax0"/>
+                                        </constraints>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nB5-SM-xy0">
-                                        <rect key="frame" x="0.0" y="273.33333333333326" width="382" height="366.66666666666674"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bp8-0M-oxi">
+                                        <rect key="frame" x="0.0" y="390" width="382" height="266"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="ECI-nt-OU0" firstAttribute="width" secondItem="SpS-Jr-IWc" secondAttribute="width" id="iTb-5Z-eKm"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="YR2-S2-8Rh" firstAttribute="top" secondItem="gWw-6t-6G0" secondAttribute="top" constant="16" id="Oid-ke-wJC"/>
-                            <constraint firstItem="gWw-6t-6G0" firstAttribute="trailing" secondItem="YR2-S2-8Rh" secondAttribute="trailing" constant="16" id="So5-hz-j5m"/>
-                            <constraint firstItem="gWw-6t-6G0" firstAttribute="bottom" secondItem="YR2-S2-8Rh" secondAttribute="bottom" constant="16" id="qdW-yt-hvu"/>
-                            <constraint firstItem="YR2-S2-8Rh" firstAttribute="leading" secondItem="gWw-6t-6G0" secondAttribute="leading" constant="16" id="vEo-ad-Toa"/>
+                            <constraint firstItem="SpS-Jr-IWc" firstAttribute="top" secondItem="gWw-6t-6G0" secondAttribute="top" id="2lB-rK-g6e"/>
+                            <constraint firstItem="gWw-6t-6G0" firstAttribute="trailing" secondItem="SpS-Jr-IWc" secondAttribute="trailing" constant="16" id="LW6-q4-zXO"/>
+                            <constraint firstItem="SpS-Jr-IWc" firstAttribute="leading" secondItem="gWw-6t-6G0" secondAttribute="leading" constant="16" id="O5G-FI-mzV"/>
+                            <constraint firstItem="gWw-6t-6G0" firstAttribute="bottom" secondItem="SpS-Jr-IWc" secondAttribute="bottom" constant="16" id="OBh-8O-HJN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gWw-6t-6G0"/>
                     </view>
                     <connections>
-                        <outlet property="descriptionTextView" destination="nB5-SM-xy0" id="6og-TR-gRH"/>
-                        <outlet property="topImage" destination="QPN-KV-ZMl" id="5Yr-5u-BBn"/>
+                        <outlet property="descriptionTextView" destination="bp8-0M-oxi" id="UJi-Gx-cyM"/>
+                        <outlet property="topImage" destination="ECI-nt-OU0" id="Exw-t4-3iR"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4G0-LN-81u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1984" y="113"/>
         </scene>
