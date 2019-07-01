@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     
     private let segueIdNewsDetail: String = "showArticleDetail"
     
-    private var news = [News]() {
+    private var news = [ArticleData]() {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    private var articleSelected: News?
+    private var articleSelected: Article?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +62,7 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.articleSelected = self.news[indexPath.row]
+        self.articleSelected = self.news[indexPath.row].data
         
         tableView.deselectRow(at: indexPath, animated: false)
         
@@ -88,7 +88,7 @@ extension MainViewController: UITableViewDataSource {
             return rawCell!
         }
         
-        articleCell.fillCell(article: self.news[indexPath.row])
+        articleCell.fillCell(article: self.news[indexPath.row].data)
         
         return articleCell
     }

@@ -12,13 +12,13 @@ class ArticleDetailVC: UIViewController {
     @IBOutlet weak private var topImage: UIImageView!
     @IBOutlet weak private var descriptionTextView: UITextView!
     
-    public var article: News!
+    public var article: Article!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = self.article.title
         
-        self.descriptionTextView.text = self.article.description
+        self.descriptionTextView.text = self.article.selftext
     }
 }
