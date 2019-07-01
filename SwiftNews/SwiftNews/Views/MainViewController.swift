@@ -31,6 +31,14 @@ class MainViewController: UIViewController {
         self.tableView.dataSource = self
         
         self.tableView.register(UINib(nibName: self.cellNameAndId, bundle: nil), forCellReuseIdentifier: self.cellNameAndId)
+        
+        self.loadNews()
+    }
+    
+    fileprivate func loadNews() {
+        // TODO: remove test data
+        self.news = [News(title: "Test 1", thumbnail: "image1"),
+                     News(title: "Test 2", thumbnail: "image2")]
     }
 }
 
