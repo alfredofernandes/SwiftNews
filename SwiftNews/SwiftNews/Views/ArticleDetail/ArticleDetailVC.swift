@@ -20,5 +20,16 @@ class ArticleDetailVC: UIViewController {
         self.title = self.article.title
         
         self.descriptionTextView.text = self.article.selftext
+        
+        guard let imageURL = URL(string: self.article.thumbnail) else {
+            return
+        }
+        
+        if let image = Utilities.getImage(fromURL: imageURL) {
+            self.topImage.image = image
+            self.topImage.isHidden = false
+        } else {
+            self.topImage.isHidden = true
+        }
     }
 }
