@@ -46,7 +46,7 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.news.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,6 +59,8 @@ extension MainViewController: UITableViewDataSource {
             
             return rawCell!
         }
+        
+        articleCell.fillCell(article: self.news[indexPath.row])
         
         return articleCell
     }
