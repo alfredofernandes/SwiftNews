@@ -38,6 +38,18 @@ class MainViewController: UIViewController {
         self.loadNews()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailVC = segue.destination as? ArticleDetailVC else {
+            #if DEBUG
+                print("Not possible to convert the segue to: \(ArticleDetailVC.self)")
+            #endif
+            
+            return
+        }
+        
+        detailVC.article = self.articleSelected
+    }
+    
     fileprivate func loadNews() {
         // TODO: remove test data
         self.news = [News(title: "Test 1", description: "test....", thumbnail: "image1"),
