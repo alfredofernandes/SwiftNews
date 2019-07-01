@@ -31,4 +31,29 @@ internal enum FetchErrors: Error {
 }
 
 internal final class FetchController {
+    internal func fetchNews(completion: @escaping(Result<News, FetchErrors>) -> Void) {
+        guard let url = URL(string: Constants.kURL_JSON) else {
+            completion(.failure(.notPossibleToCreateUrl))
+            return
+        }
+        
+        let dataTask = URLSession.shared.dataTask(with: url) { (data, _, _) in
+            guard let jsonData = data else {
+                completion(.failure(.dataIsNil))
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                
+                let data = try decoder.decode(News.self, from: jsonData)
+                
+                completion(.success(data))
+            } catch {
+                completion(.failure(.canNotProccessData))
+            }
+        }
+        
+        dataTask.resume()
+    }
 }
