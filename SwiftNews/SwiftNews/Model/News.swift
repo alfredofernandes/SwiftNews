@@ -23,9 +23,9 @@ public struct ArticleData: Decodable {
 
 public struct Article: Decodable {
     private(set) var title: String
-    private(set) var selftext: String
+    private(set) var description: String
     private(set) var thumbnail: String
-    private(set) var thumbnail_height: Int?
+    private(set) var thumbnailHeight: Int?
     private(set) var preview: Preview?
     
     struct Preview: Decodable {
@@ -39,5 +39,13 @@ public struct Article: Decodable {
     
     struct Source: Decodable {
         private(set) var url: String
+    }
+    
+    private enum CodingKeys: String, CodingKey {
+        case title
+        case description = "selftext"
+        case thumbnail
+        case thumbnailHeight = "thumbnail_height"
+        case preview
     }
 }

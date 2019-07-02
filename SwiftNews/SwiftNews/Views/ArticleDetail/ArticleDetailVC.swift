@@ -19,7 +19,7 @@ class ArticleDetailVC: UIViewController {
         
         self.title = self.article.title
         
-        self.descriptionTextView.text = self.article.selftext
+        self.descriptionTextView.text = self.article.description
         
         guard let imageURL = URL(string: self.article.thumbnail) else {
             return
