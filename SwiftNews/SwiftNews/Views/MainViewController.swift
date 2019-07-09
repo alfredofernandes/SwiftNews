@@ -23,6 +23,8 @@ class MainViewController: UIViewController {
         }
     }
     
+    private var nextPage: String?
+    
     private var articleSelected: Article?
     
     override func viewDidLoad() {
@@ -58,6 +60,7 @@ class MainViewController: UIViewController {
             switch result {
             case .success(let newsData):
                 self.news += newsData.data.children
+                self.nextPage = newsData.data.after
             case .failure(let error):
                 print("Error fetching news data. More info: \(error.prettyDescription)")
             }
