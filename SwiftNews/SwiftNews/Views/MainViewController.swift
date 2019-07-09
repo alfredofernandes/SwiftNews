@@ -38,7 +38,7 @@ class MainViewController: UIViewController {
         
         self.tableView.register(UINib(nibName: self.cellNameAndId, bundle: nil), forCellReuseIdentifier: self.cellNameAndId)
         
-        self.loadNews()
+        self.loadNews(nextPage: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -53,11 +53,11 @@ class MainViewController: UIViewController {
         detailVC.article = self.articleSelected
     }
     
-    fileprivate func loadNews() {
-        CoreFacade.shared.fetchNews { (result) in
+    fileprivate func loadNews(nextPage: String?) {
+        CoreFacade.shared.fetchNews(nextPage: nextPage) { (result) in
             switch result {
             case .success(let newsData):
-                self.news = newsData.data.children
+                self.news += newsData.data.children
             case .failure(let error):
                 print("Error fetching news data. More info: \(error.prettyDescription)")
             }
