@@ -23,6 +23,8 @@ class MainViewController: UIViewController {
         }
     }
     
+    private var nextPage: String?
+    
     private var articleSelected: Article?
     
     override func viewDidLoad() {
@@ -38,7 +40,7 @@ class MainViewController: UIViewController {
         
         self.tableView.register(UINib(nibName: self.cellNameAndId, bundle: nil), forCellReuseIdentifier: self.cellNameAndId)
         
-        self.loadNews()
+        self.loadNews(nextPage: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -53,11 +55,12 @@ class MainViewController: UIViewController {
         detailVC.article = self.articleSelected
     }
     
-    fileprivate func loadNews() {
-        CoreFacade.shared.fetchNews { (result) in
+    fileprivate func loadNews(nextPage: String?) {
+        CoreFacade.shared.fetchNews(nextPage: nextPage) { (result) in
             switch result {
             case .success(let newsData):
-                self.news = newsData.data.children
+                self.news += newsData.data.children
+                self.nextPage = newsData.data.after
             case .failure(let error):
                 print("Error fetching news data. More info: \(error.prettyDescription)")
             }
@@ -80,6 +83,19 @@ extension MainViewController: UITableViewDelegate {
 // MARK: - UITableViewController
 
 extension MainViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if  indexPath.row == self.news.count - 1 {
+            let spinner = UIActivityIndicatorView(style: .gray)
+            spinner.startAnimating()
+            spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(44))
+            
+            self.tableView.tableFooterView = spinner
+            self.tableView.tableFooterView?.isHidden = false
+            
+            self.loadNews(nextPage: self.nextPage)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.news.count
     }

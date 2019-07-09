@@ -31,10 +31,15 @@ internal enum FetchErrors: Error {
 }
 
 internal final class FetchController {
-    internal func fetchNews(completion: @escaping(Result<News, FetchErrors>) -> Void) {
-        guard let url = URL(string: Constants.kURL_JSON) else {
+    internal func fetchNews(nextPage: String?, completion: @escaping(Result<News, FetchErrors>) -> Void) {
+        guard var url = URL(string: Constants.kURL_JSON) else {
             completion(.failure(.notPossibleToCreateUrl))
             return
+        }
+        
+        if let nextPageParam = nextPage {
+            let urlString = url.absoluteString + "?after=\(nextPageParam)"
+            url = URL(string: urlString)!
         }
         
         let dataTask = URLSession.shared.dataTask(with: url) { (data, _, _) in
