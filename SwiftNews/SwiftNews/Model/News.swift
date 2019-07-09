@@ -14,6 +14,7 @@ public struct News: Decodable {
     
     struct DataResponse: Decodable {
         private(set) var children: [ArticleData]
+        private(set) var after: String
     }
 }
 
