@@ -27,7 +27,7 @@ class CoreFacade {
     
     // MARK: - News
     
-    public func fetchNews(completion: @escaping(Result<News, FetchErrors>) -> Void) {
-        self.fetchController.fetchNews(completion: completion)
+    public func fetchNews(nextPage: String?, completion: @escaping(Result<News, FetchErrors>) -> Void) {
+        self.fetchController.fetchNews(nextPage: nextPage, completion: completion)
     }
 }
